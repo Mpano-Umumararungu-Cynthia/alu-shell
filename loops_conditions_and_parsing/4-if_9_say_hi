@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 #nine on new line
 count=1
-while [ $i<11 ]
+while [ $count<11 ]
 do
     echo "Best School"
-    (( i++ ))
-    if (($i=9))
+    (( count++ ))
+    if [ $count -eq 9 ]
     then
          echo "Hi"
     fi	 
