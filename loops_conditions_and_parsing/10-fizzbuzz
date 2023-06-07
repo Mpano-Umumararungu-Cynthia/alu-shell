@@ -3,7 +3,6 @@
 count=1
 while [ $count -le 100 ]
 do
- echo "$count"
  if (( $count%3 == 0 && $count%5 == 0)) 
  then
    echo "fizzbuzz"
@@ -13,6 +12,8 @@ do
  elif (( $count%5 == 0 )) 
  then 
    echo "buzz"
+ else 
+   echo "$count"	 
  fi
  (( count++ ))
 done
