@@ -15,4 +15,4 @@ do
    echo "buzz"
  fi
  (( count++ ))
-fi
+done
