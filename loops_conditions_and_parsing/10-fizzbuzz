@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 #loop again
-for `count` in (1..100)
+for i  in (1..100)
 do
- if (( count % 3 == 0 && count % 5 == 0)) 
+ if (( i % 3 == 0 && i % 5 == 0)) 
  then
    echo "fizzbuzz"
- elif (( count % 3 == 0 )) 
+ elif (( i % 3 == 0 )) 
  then 
    echo "fizz"
- elif (( count % 5 == 0 )) 
+ elif (( i % 5 == 0 )) 
  then 
    echo "buzz"
  else 
-   echo "$count"	 
+   echo "$i"	 
  fi
 done
