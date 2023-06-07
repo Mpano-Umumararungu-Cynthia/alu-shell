@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #loop again
-for i in (1..100)
+for ((i=1; i<=100; i++))
 do
  if (( i % 3 == 0 && i % 5 == 0)) 
  then
