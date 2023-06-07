@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 #loop again
-count=0
+count=1
 while [ $count -le 100 ]
 do
  echo "$count"
- if [ $count=$(($count/3)) && $count=$(($count/5)) ]
+ if (( $count%3 == 0 && $count%5 == 0)) 
  then
    echo "fizzbuzz"
- elif [ $count=$(($count/3)) ]
+ elif (( $count%3 == 0 )) 
  then 
    echo "fizz"
- elif [ $count=$(($count/5)) ]
+ elif (( $count%5 == 0 )) 
  then 
    echo "buzz"
  fi
