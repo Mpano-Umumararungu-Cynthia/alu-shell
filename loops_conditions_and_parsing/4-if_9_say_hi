@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #nine on new line
 count=1
-while [ $count<11 ]
+while [ $count -lt 11 ]
 do
     echo "Best School"
     (( count++ ))
