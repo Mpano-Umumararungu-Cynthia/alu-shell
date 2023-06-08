@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "$($RANDOM)"
+read num1
+echo "$num1"
