@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo "$($RANDOM 10)"
+read num1
+echo "$num1"
+sqr_num1=$($num1**2)
+echo "$sqr_num1"
