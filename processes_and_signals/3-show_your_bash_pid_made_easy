@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 #using top
-top -o pid,cmd | grep bash
+top -o pid,cmd | pgrep bash
