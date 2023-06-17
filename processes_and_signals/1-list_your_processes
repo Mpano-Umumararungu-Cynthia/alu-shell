@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
-#new list of pid
-ps -eHu
+#About processes
+#list all processes
+ps -efH | less
