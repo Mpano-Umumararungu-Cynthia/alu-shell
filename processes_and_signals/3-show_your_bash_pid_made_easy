@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 #using top
 # shellcheck disable=SC2009
-pids=$(pgrep -f bash)
+pids=$(pgrep bash)
 for pid in $pids; do
 	process_name=$( /proc/"$pid"/cmdline | tr '\0' ' ')
-	echo "PIiD: $pid, Process Name: $process_name"
+	echo "PID: $pid, Process Name: $process_name"
+	
 done
