@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #About processes
 #list all processes
-ps -efH | less
+ps auxf
