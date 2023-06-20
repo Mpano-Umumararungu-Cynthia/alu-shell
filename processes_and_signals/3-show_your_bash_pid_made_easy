@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 #using top
 # shellcheck disable=SC2009
-pids=$(pgrep -f bash)
-for pid in $pids; 
+top_output=$(top -b -n 1 -c | pgrep "bash")
+pids=$(echo "$top_output" | awk '{print $1}')
+process_names=$(echo "$top_output" | awk '{print $NF}')
+for i in $(seq 1 $(echo "$pids" | wc -l)); 
 do
-	process_name=$( ps -p "$pid" -o  comm= )
+	pid=$(echo "$pids" | sed -n "${i}p")
+	process_name=$(echo "$process_names" | sed -n "${i}p" )
 	echo "PID: $pid, Process Name: $process_name"
 	
 done
