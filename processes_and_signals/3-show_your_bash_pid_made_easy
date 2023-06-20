@@ -4,7 +4,8 @@
 top_output=$(top -b -n 1 -c | pgrep "bash")
 pids=$(echo "$top_output" | awk '{print $1}')
 process_names=$(echo "$top_output" | awk '{print $NF}')
-for i in $(seq 1 $(echo "$pids" | wc -l)); 
+x=$(echo "$pids" | wc -l)
+for i in $(seq 1 "$x"); 
 do
 	pid=$(echo "$pids" | sed -n "${i}p")
 	process_name=$(echo "$process_names" | sed -n "${i}p" )
