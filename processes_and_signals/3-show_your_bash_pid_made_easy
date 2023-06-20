@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #using top
 # shellcheck disable=SC2009
-top_output=$(top -b -n 1 | pgrep "bash")
+top_output=$(top -b -n 1 | grep "bash")
 while read -r line;
 do
 	pid=$(echo "$line" | awk '{print $1}')
