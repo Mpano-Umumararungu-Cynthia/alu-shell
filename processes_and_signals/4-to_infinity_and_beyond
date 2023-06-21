@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 #to infinity
 y=$(sleep 2)
-while (x=0; x -lt 7)
+x=1
+while ($x -lt 7)
 do
     echo"To infinity and beyond $y"
     (x++)
