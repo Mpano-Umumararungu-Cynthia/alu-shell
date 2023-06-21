@@ -2,5 +2,5 @@
 #dont stop
 ./4-to_infinity_and_beyond.sh &
 pid=$!
-wait $pid
+kill $pid
 echo "Terminated"
