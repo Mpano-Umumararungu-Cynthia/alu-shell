@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 #dont stop
-while true
-do 
-   echo "To infinity and beyond"
-   kill
-done
+./4-to_infinity_and_beyond.sh &
+pid=$!
+kill $pid
+
