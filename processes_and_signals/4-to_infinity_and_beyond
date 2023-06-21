@@ -4,6 +4,6 @@ y=$(sleep 2)
 x=1
 while [ $x -lt 7 ]
 do
-    echo"To infinity and beyond $y"
+    echo "To infinity and beyond $y"
     (( x++ ))
 done
