@@ -4,5 +4,5 @@ y=$(sleep 2)
 while (x=0; x -lt 7)
 do
     echo"To infinity and beyond $y"
-    ((x++))
+    (x++)
 done
