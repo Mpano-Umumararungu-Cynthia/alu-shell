@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #dont stop
-./4-to_infinity_and_beyond.sh &
+./4-to_infinity_and_beyond.sh 
 
 kill
 
