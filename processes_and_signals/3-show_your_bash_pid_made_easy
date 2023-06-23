@@ -5,7 +5,7 @@ script_pid=$$
 
 pids=$(ls /proc | grep -E '^[0-9]+$')
 
-for pid in $pids; do
+for pid in $pids; dsssssssssssssssssssso
    if ps -e | findstr bash; then
       process_name=$(tr '\0' ' ' < /proc/$pid/cmdline )
 	  echo "$pid $process_name"
