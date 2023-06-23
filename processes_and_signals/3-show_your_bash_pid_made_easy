@@ -5,7 +5,7 @@
 
 
 
-for pid in $(ls /proc | grep -E '^[0-9]+$'); do
+for pid in ls /proc | grep -E '^[0-9]+$'; do
    if ps -e | findstr bash; then
       process_name=$(tr '\0' ' ' < /proc/"$pid"/cmdline )
 	  echo "$pid $process_name"
