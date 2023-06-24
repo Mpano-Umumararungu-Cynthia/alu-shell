@@ -8,9 +8,8 @@ do
   echo "To infinity and beyond"
   sleep 1
 done
-delete(){
-rm "$file"
-exit
-}
-trap 'echo "I hate the kill command"; delete' SIGTERM
+delete="rm -rf $file"
+exit_file="exit 0"
+trap 'echo "I hate the kill command"' SIGTERM
+trap 'echo"$delete $exit_file"' SIGQUIT
 trap 'echo "Y U no love me?!"' SIGINT
