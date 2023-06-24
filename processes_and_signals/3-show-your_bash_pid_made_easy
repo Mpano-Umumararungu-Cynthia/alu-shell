@@ -1,13 +1,14 @@
 #!/user/bin/env bash
 #using top
 id=$$
-for pid in /proc/*/; do
-pid=${pid%*/}
-pid=${pid##*/}
- if [ -f "/proc/$pid/cmdline" ]; then
-   cmdline=$(tr -d '\0' < "/proc/$pid/cmdline")
-   if ["$cmdline" == *bash*]; then
+
+pids=$(pgrep -f bash)
+
+script_name=$(basename "$0")
+
+for pid in $pids; do
+ if [ "$pid" -ne "$id" ]; then
       echo "$pid bash"
-   fi
+   
  fi
 done
