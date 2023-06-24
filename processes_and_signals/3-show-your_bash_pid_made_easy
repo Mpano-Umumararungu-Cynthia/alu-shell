@@ -1,3 +1,13 @@
 #!/user/bin/env bash
 #using top
-top -o pid,cmd | grep bash
+id=$$
+for pid in /proc/*/; do
+pid=${pid%*/}
+pid=${pid##*/}
+ if [ -f "/proc/$pid/cmdline" ]; then
+   cmdline=$(tr -d '\0' < "/proc/$pid/cmdline")
+   if ["$cmdline" == *bash*]; then
+      echo "$pid bash"
+   fi
+ fi
+done
