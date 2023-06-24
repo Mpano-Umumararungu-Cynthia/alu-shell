@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#nineth
+file="/var/run/myscript.pid"
+echo $$ > $file
+
+while true;
+do
+  echo "To infinity and beyond"
+  sleep 1
+done
+delete(){
+rm -rf $file
+exit
+}
+trap 'echo "I hate the kill command"; delete()' SIGTERM SIGQUIT
+trap 'echo "Y U no love me?!"' SIGINT
