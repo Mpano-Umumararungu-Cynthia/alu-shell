@@ -9,7 +9,7 @@ do
   sleep 1
 done
 delete(){
-rm -rf "$file"
+rm "$file"
 exit
 }
 trap 'echo "I hate the kill command"; delete' SIGTERM
