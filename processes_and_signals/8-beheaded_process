@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 #killing
+pid="ps -P | pgrep 7-highlander"
+
 while true;
 do
-  kill -9 7-highlander
+  kill -9 "$pid"
 done
