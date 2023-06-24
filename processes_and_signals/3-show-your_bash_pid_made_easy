@@ -8,6 +8,8 @@ for pid in /proc/*/; do
 
   if [ "$name" == *"bash"* ]; then
       echo "$pid $name"
+  else 
+      echo "bash not found"
    
   fi
 done
