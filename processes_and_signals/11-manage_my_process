@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 #management
-pid=$$
 file="/var/run/my_process.pid"
 
 start() {
@@ -22,7 +21,7 @@ stop() {
     pid=$(cat "$file")
     kill "$pid"
     rm "$file"
-    echo "manage_my_process"
+    echo "manage_my_process stopped"
 
 }
 restart() {
