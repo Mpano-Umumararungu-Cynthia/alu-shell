@@ -10,7 +10,9 @@ case "$choice" in
               exit 1
            fi
            ./manage_my_process &
-           echo $! > "$file"
+
+           x=$(echo $!) 
+           echo "$x" > "$file"
            echo "manage_my_process started"
 
           ;;
