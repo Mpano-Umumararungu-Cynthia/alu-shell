@@ -18,7 +18,7 @@ case "$1" in
           if [ -f "$file" ]; then
       
               pid=$(cat "$file")
-              kill "$pid"
+              pkill -f "$pid"
               rm "$file"
               echo "manage_my_process stopped"
           else
