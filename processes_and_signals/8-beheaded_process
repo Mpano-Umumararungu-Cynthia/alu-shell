@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 #killing
-while true; do
-   kill 9 '7-highlander'
-done
+pkill -f '7-highlander'
