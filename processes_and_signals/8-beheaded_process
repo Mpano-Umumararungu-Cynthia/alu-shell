@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 #killing
+<<<<<<< HEAD
 pkill -f '7-highlander'
+=======
+pkill -f '7-highlander'
+>>>>>>> bddfe1c5dbe5c415357549d83d8ee0fe654ad6f4
