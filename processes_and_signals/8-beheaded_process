@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 #killing
-pkill -f "./7-highlander"
+if pgrep -l "7-highlander"; then
+  kill 9 '7-highlander'
+fi
