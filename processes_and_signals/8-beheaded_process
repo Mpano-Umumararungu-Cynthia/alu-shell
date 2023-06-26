@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 #killing
 while true; do
-  pkill -SIGKILL '7-highlander'
+   kill -SIGKILL '7-highlander'
 done
