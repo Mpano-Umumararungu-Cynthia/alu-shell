@@ -4,7 +4,7 @@ pid=$$
 file="/var/run/my_process.pid"
 
 start() {
-    if [ -f "'$file" ]; then
+    if [ -f "$file" ]; then
        echo "manage_my_process is already running."
        exit 1
     fi
