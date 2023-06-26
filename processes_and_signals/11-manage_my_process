@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #management
 file="/var/run/my_process.pid"
-
-case "$1" in
+read "start ,stop or restart" choice
+case "$choice" in
      start)
           
            if [ -f "$file" ]; then
