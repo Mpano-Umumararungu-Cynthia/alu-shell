@@ -13,20 +13,22 @@ start() {
 }
 
 stop() {
-    if [ ! -f "$file" ]; then
-       echo "manage_my_process is not running"
-       exit 1
+    if [ -f "$file" ]; then
+      
+        pid=$(cat "$file")
+        kill "$pid"
+        rm "$file"
+        echo "manage_my_process stopped"
+    else
+        echo "manage_my_process is not running"
     fi
 
-    pid=$(cat "$file")
-    kill "$pid"
-    rm "$file"
-    echo "manage_my_process stopped"
-
+    
 }
 restart() {
-    stop
-    start
+    $0 stop
+    sleep 1
+    $0 start
     echo "manage_my_process restarted"
 }
 
