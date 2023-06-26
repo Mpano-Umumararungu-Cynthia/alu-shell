@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 #killing
-if [ pgrep -l "7-highlander" ]; then
+if [ ps -e | firstr "7-highlander" ]; then
   kill 9 '7-highlander'
 fi
