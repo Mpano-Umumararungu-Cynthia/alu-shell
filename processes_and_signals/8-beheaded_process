@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 #killing
-while true; then
+while true; do
   killall -SIGKILL '7-highlander'
-fi
+done
