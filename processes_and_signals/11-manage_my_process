@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#management
+pid=$$
+file="/var/run/my_process.pid"
+
+
