@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #management
 file="/var/run/my_process.pid"
-read -r "start ,stop or restart  " choice
+read -p -r "start ,stop or restart  " choice
 case "$choice" in
      start)
           
