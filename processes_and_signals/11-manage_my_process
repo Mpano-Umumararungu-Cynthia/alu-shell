@@ -1,7 +1,17 @@
 #!/usr/bin/env bash
 #management
 file="/var/run/my_process.pid"
+read -p "start ,stop or restart  " choice
+case "$choice" in
+     start)
+          
+           if [ -f "$file" ]; then
+              echo "manage_my_process is already running."
+              exit 1
+           fi
+           ./manage_my_process &
 
+<<<<<<< HEAD
 start() {
     if [ -f "$file" ]; then
        echo "manage_my_process is already running."
@@ -31,16 +41,30 @@ restart() {
     $0 start
     echo "manage_my_process restarted"
 }
+=======
+           x=$(echo $!) 
+           echo "$x" > "$file"
+           echo "manage_my_process started"
+>>>>>>> 467a757e49e0a9d20ab024aecee5e6b0136873af
 
-case "$1" in
-     start)
-          start
           ;;
      stop)
-          stop
+          if [ -f "$file" ]; then
+      
+              pid=$(cat "$file")
+              pkill -f "$pid"
+              rm "$file"
+              echo "manage_my_process stopped"
+          else
+              echo "manage_my_process is not running"
+          fi
           ;;
      restart)
-           restart
+            $0 stop
+            sleep 1
+            $0 start
+            echo "manage_my_process restarted"
+
            ;;
      *)
        echo "Usage: manage_my_process {start|stop|restart}"
