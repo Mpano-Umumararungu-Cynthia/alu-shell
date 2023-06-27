@@ -8,7 +8,7 @@ start() {
        exit 1
     fi
     ./manage_my_process &
-    echo $! > "$file"
+    echo "$!" > "$file"
     echo "manage_my_process started"
 }
 
