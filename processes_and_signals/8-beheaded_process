@@ -1,9 +1,3 @@
 #!/usr/bin/env bash
-#killing
-./7-highlander &
-
-highlander_pid=$!
-
-./8-beheaded_process
-
-pkill -P $highlander_pid
+# This script kills the process 7-highlander
+kill -9 "$(pgrep -f highlander
