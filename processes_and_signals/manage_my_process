@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #new
-while true; do
+while [ 1 -eq 1 ]; do
   echo "I am alive"  >> /tmp/my_process
   sleep 2
 done
