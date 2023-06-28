@@ -1,30 +1,24 @@
 #!/usr/bin/env bash
 # Best school 10 times using while loop
-
-argv1=$1
-tmpfile="/var/run/my_process.pid"
-
-strtLoop_n_crteFile()
-{
+if [ "${1}" == "start" ]
+then
     ./manage_my_process &
-    echo "$!" > "$tmpfile"
-}
-killLoop_n_rmFile()
-{
-    sudo pkill -f "./manage_my_process"
-    rm "$tmpfile"
-}
-case "$argv1" in
-    start) echo "manage_my_process started"
-        strtLoop_n_crteFile
-        ;;
-    stop) echo "manage_my_process stopped"
-        killLoop_n_rmFile
-        ;;
-    restart) echo "manage_my_process restarted"
-        killLoop_n_rmFile
-        strtLoop_n_crteFile
-        ;;
-    *) echo "Usage: manage_my_process {start|stop|restart}"
-        ;;
-esac
+    touch /var/run/my_process.pid
+    echo "$!" > /var/run/my_process.pid
+    echo "manage_my_process started"
+elif [ "${1}" == "stop" ]
+then
+    echo "manage_my_process stopped"
+    kill "$(cat /var/run/my_process.pid)"
+    rm /var/run/my_process.pid
+elif [ "${1}" == "restart" ]
+then
+    kill "$(cat /var/run/my_process.pid)"
+    rm /var/run/my_process.pid
+    ./manage_my_process &
+    touch /var/run/my_process.pid
+    echo "$!" > /var/run/my_process.pid
+    echo "manage_my_process restarted"
+else
+    echo "Usage: manage_my_process {start|stop|restart}"
+fi
